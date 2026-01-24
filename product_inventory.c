@@ -1,6 +1,7 @@
 #include<stdio.h>
 #include<conio.h>
 #include<stdlib.h>
+#include<string.h>
 
 // User Defined DataType - Structure for Student data
 struct Student
@@ -27,6 +28,7 @@ void searchStudentById();
 void sortStudentByMarks();
 void printStudent(struct Student s);
 void mainMenu();
+void logInUser();
 
 // Function to print a single student record
 void printStudent(struct Student s)
@@ -239,41 +241,78 @@ void mainMenu()
     printf("\nEnter your choice: ");
 }
 
+void logInUser(){
+    int i , password , flag = 0;
+    char username[30];
+
+    for (i = 0; i < 3; i++){
+        printf("\nEnter you Detail : Try %d" , i+1);
+        printf("\n============================");
+        printf("\nEnter the username : ");
+        scanf("\n%s" , &username);
+        printf("\nEnter the Password : ");
+        scanf("\n%d" , &password);
+
+        if(strcmp(username,"admin")==0 && password == 1234)
+        {
+            flag = 1;
+            printf("Log In successfully");
+            mainMenu();
+            break;
+        }else{
+            printf("Access Denied...");
+        }
+    } 
+    
+    if (flag = 0){
+        printf("Access Denied. Exiting program...");
+        exit(0);
+    }
+}
+
+
 // Main function
 int main()
-{
+{ 
+    logInUser();
     int choice;
-
     do
     {
-        mainMenu();
-        scanf("%d", &choice);
+    
+    scanf("%d", &choice);
 
-        switch(choice)
-        {
-            case 1: addStudent(); 
-                    break;
-            case 2: updateStudentById(); 
-                    break;
-            case 3: deleteStudentById(); 
-                    break;
-            case 4: displayStudents(); 
-                    break;
-            case 5: searchStudentById(); 
-                    break;
-            case 6: sortStudentByMarks(); 
-                    break;
-            case 7:
-                printf("\nStudent Application Exit");
-                exit(0);
-            default:
-                printf("\nInvalid choice! Please try again.");
-        }
+    switch(choice)
+    {
+    case 1: addStudent(); 
+            break;
+    case 2: updateStudentById(); 
+            break;
+    case 3: deleteStudentById(); 
+            break;
+    case 4: displayStudents(); 
+            break;
+    case 5: searchStudentById(); 
+            break;
+    case 6: sortStudentByMarks(); 
+            break;
+    case 7:
+        printf("\nStudent Application Exit");
+        exit(0);
+    default:
+        printf("\nInvalid choice! Please try again.");
+    }
 
-        printf("\n\nPress any key to continue...");
-        getch();
+    printf("\n\nPress any key to continue...");
+    getch();
 
     } while(choice != 7);
-
+        
     return 0;
+            
+        
 }
+
+    
+      
+
+
