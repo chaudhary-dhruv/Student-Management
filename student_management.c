@@ -48,7 +48,7 @@ void addStudent()
     s.rno = rnos;
     fflush(stdin);
 
-    printf("\nEnter Name : ");
+    printf("\nEnter the name of Student : ");
     gets(s.name);
 
     printf("\nEnter Std : ");
