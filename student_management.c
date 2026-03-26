@@ -51,7 +51,7 @@ void addStudent()
     printf("\nEnter the name of Student : ");
     gets(s.name);
 
-    printf("\nEnter Std : ");
+    printf("\nEnter your Std : ");
     scanf("%d", &s.std);
 
     printf("\nEnter the total Marks : ");
@@ -71,7 +71,7 @@ void updateStudentById()
 {
     int i, rno, flag = 1;
 
-    printf("\nEnter Rno which you want to update: ");
+    printf("\nEnter Roll no which you want to update: ");
     scanf("%d", &rno);
 
     for(i = 0; i < studentCount; i++)
