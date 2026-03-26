@@ -54,7 +54,7 @@ void addStudent()
     printf("\nEnter Std : ");
     scanf("%d", &s.std);
 
-    printf("\nEnter Marks : ");
+    printf("\nEnter the total Marks : ");
     scanf("%d", &s.marks);
 
     s.active = 1;
